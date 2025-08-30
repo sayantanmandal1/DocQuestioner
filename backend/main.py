@@ -125,6 +125,7 @@ app.add_middleware(
         "http://localhost:8080",  # Alternative development port
         "https://localhost:3000", # HTTPS development
         "https://127.0.0.1:3000",
+        "*",
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"],
