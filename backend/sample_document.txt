@@ -1,0 +1,30 @@
+AI Microservices Platform Documentation
+
+This document provides an overview of the AI Microservices platform, which offers three core services:
+
+1. Text Summarization Service
+   - Transforms long documents into concise summaries
+   - Supports multiple summarization styles (concise, detailed, bullet-points)
+   - Handles text chunking for large documents
+   - Provides compression ratio metrics
+
+2. Document Q&A Service
+   - Allows users to upload documents and ask questions
+   - Supports multiple file formats (txt, pdf, docx)
+   - Provides intelligent answers based on document content
+   - Includes confidence scoring for answers
+
+3. Learning Path Generation Service
+   - Creates personalized learning paths based on user goals
+   - Considers current skill level and available time
+   - Provides structured phases with objectives and activities
+   - Includes resource recommendations and progress tracking
+
+Technical Architecture:
+- Backend: FastAPI with Python 3.8+
+- Frontend: Next.js with TypeScript
+- AI Integration: OpenAI through OpenRouter
+- Database: Optional for user data persistence
+- Deployment: Docker containers with orchestration support
+
+The platform is designed for scalability, maintainability, and ease of integration with existing systems.

@@ -1,0 +1,66 @@
+# ===================================
+# AI Microservices - Docker Compose
+# ===================================
+
+version: '3.8'
+
+services:
+  # Backend API Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-microservices-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./backend:/app
+      - backend_cache:/app/__pycache__
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - ai-microservices
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai-microservices-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NODE_ENV=development
+    volumes:
+      - ./frontend:/app
+      - frontend_node_modules:/app/node_modules
+      - frontend_next:/app/.next
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - ai-microservices
+
+volumes:
+  backend_cache:
+    driver: local
+  frontend_node_modules:
+    driver: local
+  frontend_next:
+    driver: local
+
+networks:
+  ai-microservices:
+    driver: bridge
+    name: ai-microservices-network

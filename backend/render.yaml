@@ -1,0 +1,27 @@
+# ===================================
+# Render.com Deployment Configuration
+# ===================================
+
+services:
+  - type: web
+    name: ai-microservices-backend
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: OPENAI_API_KEY
+        sync: false  # Set this in Render dashboard
+      - key: CORS_ORIGINS
+        value: "https://your-frontend-domain.vercel.app,http://localhost:3000"
+      - key: LOG_LEVEL
+        value: INFO
+    autoDeploy: true
+    disk:
+      name: ai-microservices-data
+      mountPath: /data
+      sizeGB: 1
