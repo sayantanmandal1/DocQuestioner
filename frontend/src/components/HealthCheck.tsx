@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { healthService } from '@/lib/services';
+import { healthService } from '../lib/services';
 import { useNotifications } from './NotificationProvider';
 
 interface HealthStatus {

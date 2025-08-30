@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { summarizationService } from '@/lib/services';
-import type { SummarizationRequest, SummarizationResponse } from '@/types/api';
+import { summarizationService } from '../lib/services';
+import type { SummarizationRequest, SummarizationResponse } from '../types/api';
 import { useNotifications } from './NotificationProvider';
 
 interface FormData {

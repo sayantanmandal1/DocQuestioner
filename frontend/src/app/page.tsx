@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Card, Grid, Container } from '@/components';
+import { Card, Grid, Container } from '../components';
 import { Bot, FileText, MessageCircleQuestion, GraduationCap, Zap, CheckCircle, Shield, Heart } from 'lucide-react';
 
 export default function Home() {
@@ -141,7 +141,7 @@ export default function Home() {
             Looking for API documentation?
           </p>
           <a 
-            href="http://localhost:8000/docs"
+            href="https://docquestioner.onrender.com/docs"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-colors"

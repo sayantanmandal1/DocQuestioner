@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, RenderOptions } from '@testing-library/react';
-import { NotificationProvider } from '@/components/NotificationProvider';
+import { NotificationProvider } from '../components/NotificationProvider';
 
 // Test wrapper with NotificationProvider
 const TestWrapper = ({ children }: { children: React.ReactNode }) => (

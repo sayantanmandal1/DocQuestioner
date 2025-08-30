@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { qaService } from '@/lib/services';
-import type { QAResponse } from '@/types/api';
+import { qaService } from '../lib/services';
+import type { QAResponse } from '../types/api';
 import { useNotifications } from './NotificationProvider';
 
 interface FormData {

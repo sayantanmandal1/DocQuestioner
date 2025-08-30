@@ -1,4 +1,4 @@
-import QA from '@/components/QA';
+import QA from '../../components/QA';
 
 export default function QAPage() {
   return (

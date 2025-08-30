@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { learningPathService } from '@/lib/services';
-import type { LearningPathRequest, LearningPathResponse, LearningPhase } from '@/types/api';
+import { learningPathService } from '../lib/services';
+import type { LearningPathRequest, LearningPathResponse, LearningPhase } from '../types/api';
 import { useNotifications } from './NotificationProvider';
 
 interface FormData {

@@ -5,7 +5,7 @@
  * Make sure the backend is running on http://localhost:8000 before running this test.
  */
 
-import { healthService, summarizationService, qaService, learningPathService } from '@/lib/services';
+import { healthService, summarizationService, qaService, learningPathService } from '../lib/services';
 
 describe('Manual Integration Tests', () => {
   // Skip these tests by default since they require a running backend

@@ -1,4 +1,4 @@
-import Summarization from '@/components/Summarization';
+import Summarization from '../../components/Summarization';
 
 export default function SummarizationPage() {
   return (

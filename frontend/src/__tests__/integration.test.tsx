@@ -7,11 +7,11 @@
 
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { NotificationProvider } from '@/components/NotificationProvider';
-import Summarization from '@/components/Summarization';
-import QA from '@/components/QA';
-import LearningPath from '@/components/LearningPath';
-import * as services from '@/lib/services';
+import { NotificationProvider } from '../components/NotificationProvider';
+import Summarization from '../components/Summarization';
+import QA from '../components/QA';
+import LearningPath from '../components/LearningPath';
+import * as services from '../lib/services';
 
 // Mock the services
 jest.mock('@/lib/services');
